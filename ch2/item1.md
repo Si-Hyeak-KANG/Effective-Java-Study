@@ -39,3 +39,31 @@
 - of : 여러 매개변수를 받고, 인스턴스를 반환하는 집계 메서드
 
       Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING);
+  
+- valueOf : from, of 의 자세한 버전
+
+      BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);
+
+- instance/getInstance : 매개변수로 명시한 인스턴스를 반환하지만, 같은 인스턴스임을 보장하지 않음.
+
+      StackWalker luke = StackWalker.getInstance(options);
+
+- create/newInstance : instance/getInstance와 같지만, 매번 새로운 인스턴스를 생성하여 반환
+
+      Object newArray = Array.newInstance(classObject, arrayLen);
+
+- getType : getInstance와 같으나, 생성한 클래스가 아닌 다른 클래스에 Factory Method 정의할 때 사용.
+
+  > "Type" : Factory Method가 반환할 객체 타입
+
+      BufferedReader br = Files.newBufferedReader(path);
+
+- type : getType과 newType의 간결한 버전
+
+      List<Complaint> litany = Collections.list(legacyLitany);
+
+``` 핵심정리 ```
+
+        정적 팩터리 메서드의 public 생성자는 각자의 쓰임새가 있음. 상대적인 장단점을 파악할 것
+        그렇다고 하더라도 '정적 팩터리'를 사용하는 게 유리한 경우가 더 많음.
+        
